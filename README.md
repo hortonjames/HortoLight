@@ -1,4 +1,0 @@
-HortoLight
-==========
-
-Flashlight app
