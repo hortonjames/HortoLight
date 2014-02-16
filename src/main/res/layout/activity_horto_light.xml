@@ -4,4 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="pkg.hortolight.app.HortoLight"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <Button
+        android:layout_width="169dp"
+        android:layout_height="169dp"
+        android:text="ON"
+        android:id="@+id/button"
+        android:layout_gravity="center"
+        android:onClick="setListFooter"
+        android:longClickable="false"
+        android:enabled="false"
+        android:clickable="true" />
+</FrameLayout>
