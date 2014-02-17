@@ -1,22 +1,43 @@
 package pkg.hortolight.app;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
+import android.hardware.Camera;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Button;
 
 public class HortoLight extends Activity {
+
+    Button flashlightToggle;
+    Camera cam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horto_light);
+        cam = Camera.open();
+        flashlightToggle = (Button) findViewById(R.id.xmlButton);
+        flashlightToggle.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if(flashlightToggle.getText().equals("OFF"))
+                {
+                    flashlightToggle.setText("ON");
+                    Camera.Parameters p = cam.getParameters();
+                    p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                    cam.setParameters(p);
+                    cam.startPreview();
+                }
+
+                else
+                    flashlightToggle.setText("OFF");
+                    cam.stopPreview();
+                    cam.release();
+            }
+        });
     }
 
     @Override
