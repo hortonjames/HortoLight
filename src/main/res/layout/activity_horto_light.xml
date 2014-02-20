@@ -9,10 +9,18 @@
     <Button
         android:layout_width="169dp"
         android:layout_height="169dp"
-        android:text="ON"
+        android:text="OFF"
         android:id="@+id/xmlButton"
         android:layout_gravity="center"
         android:longClickable="false"
         android:enabled="true"
         android:clickable="true" />
+
+    <SurfaceView
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:id="@+id/surfaceView"
+        android:layout_gravity="left|top" />
+
+
 </FrameLayout>
